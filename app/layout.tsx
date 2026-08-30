@@ -5,22 +5,52 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'IA para Tienda — Directorio de Herramientas IA para Comercios',
-  description: 'Las mejores herramientas de inteligencia artificial para tu tienda: atención al cliente, ventas, operaciones, finanzas y seguridad. Compará, elegí, implementá.',
-  keywords: ['ia para tienda', 'ia comercio', 'herramientas ia retail', 'chatbot tienda', 'ia ventas', 'ia inventario', 'ia contabilidad'],
+  title: {
+    default: 'IA para Tienda — Directorio de Herramientas IA para Comercios',
+    template: '%s | IA para Tienda',
+  },
+  description: 'Las mejores herramientas de inteligencia artificial para tu tienda: atención al cliente, ventas, operaciones, finanzas y seguridad.',
+  keywords: ['ia para tienda', 'ia comercio', 'herramientas ia retail', 'chatbot tienda', 'ia ventas'],
   openGraph: {
     title: 'IA para Tienda — Directorio',
-    description: 'Directorio curado de herramientas IA para comercios. Atención al cliente, ventas, operaciones, finanzas, seguridad.',
+    description: 'Directorio curado de herramientas IA para comercios.',
     url: 'https://iaparatienda.com',
     siteName: 'IA para Tienda',
     locale: 'es_AR',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
+      <head>
+        {/* Site-wide structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'IA para Tienda',
+              url: 'https://iaparatienda.com',
+              description: 'Directorio curado de herramientas IA para comercios',
+              inLanguage: 'es-AR',
+            }),
+          }}
+        />
+      </head>
       <body className={inter.className}>
         <header className="border-b border-zinc-200 bg-white px-6 py-4">
           <div className="mx-auto flex max-w-5xl items-center justify-between">
@@ -33,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href="/categoria/operaciones" className="hover:text-zinc-900">Operaciones</a>
               <a href="/categoria/finanzas" className="hover:text-zinc-900">Finanzas</a>
               <a href="/categoria/seguridad" className="hover:text-zinc-900">Seguridad</a>
+              <a href="/blog" className="hover:text-zinc-900">Guías</a>
             </nav>
           </div>
         </header>
