@@ -6,16 +6,16 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'IA para Tienda — Directorio de Herramientas IA para Comercios',
-    template: '%s | IA para Tienda',
+    default: 'Email & SMS para Tu Tienda — Directorio de Herramientas de Marketing',
+    template: '%s | Email para Tu Tienda',
   },
-  description: 'Las mejores herramientas de inteligencia artificial para tu tienda: atención al cliente, ventas, operaciones, finanzas y seguridad.',
-  keywords: ['ia para tienda', 'ia comercio', 'herramientas ia retail', 'chatbot tienda', 'ia ventas'],
+  description: 'Las mejores herramientas de email y SMS marketing para tu tienda: campañas, automatización, recuperación de carritos y retención.',
+  keywords: ['email marketing pyme', 'sms marketing tienda', 'automatizacion email', 'recuperacion carritos', 'whatsapp commerce'],
   openGraph: {
-    title: 'IA para Tienda — Directorio',
-    description: 'Directorio curado de herramientas IA para comercios.',
+    title: 'Email para Tu Tienda — Directorio',
+    description: 'Directorio curado de herramientas de email y SMS marketing para comercios.',
     url: 'https://iaparatienda.com',
-    siteName: 'IA para Tienda',
+    siteName: 'Email para Tu Tienda',
     locale: 'es_AR',
     type: 'website',
   },
@@ -43,9 +43,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'IA para Tienda',
+              name: 'Email para Tu Tienda',
               url: 'https://iaparatienda.com',
-              description: 'Directorio curado de herramientas IA para comercios',
+              description: 'Directorio curado de herramientas de email y SMS marketing para comercios',
               inLanguage: 'es-AR',
             }),
           }}

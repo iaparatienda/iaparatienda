@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const c = categories.find(x => x.slug === cat)
   if (!c) return { title: 'Categoría no encontrada' }
   return {
-    title: `${c.name} — IA para Tienda`,
+    title: `${c.name} — Email para Tu Tienda`,
     description: `Herramientas de IA para ${c.desc.toLowerCase()}. Compará opciones, precios y capacidades.`,
   }
 }

@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!tool) return { title: 'Herramienta no encontrada' }
   const cat = categories.find(c => c.slug === tool.category)
   return {
-    title: `${tool.name} — ${cat?.name || 'IA'} | IA para Tienda`,
+    title: `${tool.name} — ${cat?.name || 'IA'} | Email para Tu Tienda`,
     description: tool.description,
-    keywords: [...tool.tags, 'ia para tienda'],
+    keywords: [...tool.tags, 'email marketing pyme'],
   }
 }
 

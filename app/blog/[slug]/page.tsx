@@ -37,8 +37,8 @@ export default async function ArticlePage({ params }: Props) {
     headline: article.title,
     description: article.description,
     keywords: article.keywords.join(', '),
-    author: { '@type': 'Organization', name: 'IA para Tienda' },
-    publisher: { '@type': 'Organization', name: 'IA para Tienda', url: 'https://iaparatienda.com' },
+    author: { '@type': 'Organization', name: 'Email para Tu Tienda' },
+    publisher: { '@type': 'Organization', name: 'Email para Tu Tienda', url: 'https://iaparatienda.com' },
     datePublished: new Date().toISOString(),
   }
 

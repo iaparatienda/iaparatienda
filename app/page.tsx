@@ -9,11 +9,11 @@ export default function Home() {
       {/* Hero */}
       <section className="text-center">
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          Herramientas IA para tu tienda
+          Email & SMS marketing para tu tienda
         </h1>
         <p className="mx-auto mt-3 max-w-2xl text-zinc-600">
-          Directorio curado de inteligencia artificial aplicada al comercio.
-          Atención al cliente, ventas, operaciones, finanzas y seguridad — todo en un lugar.
+          Directorio curado de herramientas de email y SMS marketing para comercios.
+          Campañas, automatización, recuperación de carritos y retención — todo en un lugar.
         </p>
       </section>
 
