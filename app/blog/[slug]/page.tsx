@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticle(slug)
   if (!article) return { title: 'Guía no encontrada' }
   return {
-    title: `${article.title} | IA para Tienda`,
+    title: article.title,
     description: article.description,
     keywords: article.keywords,
     openGraph: {
