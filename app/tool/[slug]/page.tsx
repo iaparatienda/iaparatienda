@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getTool, categories } from '@/data/tools'
+import { articles } from '@/data/articles'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -24,6 +25,7 @@ export default async function ToolPage({ params }: Props) {
   const tool = getTool(slug)
   if (!tool) notFound()
   const cat = categories.find(c => c.slug === tool.category)
+  const relatedGuides = articles.filter(a => a.relatedTools.includes(tool.slug)).slice(0, 4)
 
   return (
     <article className="max-w-2xl">
@@ -66,6 +68,15 @@ export default async function ToolPage({ params }: Props) {
           resuelve un flujo concreto de la tienda.
         </p>
       </section>
+
+      {relatedGuides.length > 0 && (
+        <section className="mt-8 space-y-2">
+          <h2 className="text-base font-semibold text-zinc-900">Guías relacionadas</h2>
+          {relatedGuides.map((a) => (
+            <Link key={a.slug} href={`/blog/${a.slug}`} className="block text-sm text-zinc-600 hover:text-emerald-700">→ {a.title}</Link>
+          ))}
+        </section>
+      )}
     </article>
   )
 }

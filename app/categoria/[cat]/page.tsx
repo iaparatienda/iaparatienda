@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getToolsByCategory, categories } from '@/data/tools'
+import { articles } from '@/data/articles'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -22,6 +23,7 @@ export default async function CategoryPage({ params }: Props) {
   const c = categories.find(x => x.slug === cat)
   if (!c) notFound()
   const tools = getToolsByCategory(cat)
+  const relatedGuides = articles.filter(a => a.category === cat).slice(0, 4)
 
   return (
     <div>
@@ -51,6 +53,15 @@ export default async function CategoryPage({ params }: Props) {
           </Link>
         ))}
       </div>
+
+      {relatedGuides.length > 0 && (
+        <section className="mt-10 border-t border-zinc-200 pt-6">
+          <h2 className="text-lg font-semibold text-zinc-900">Guías relacionadas</h2>
+          {relatedGuides.map((a) => (
+            <Link key={a.slug} href={`/blog/${a.slug}`} className="block text-sm text-zinc-600 hover:text-emerald-700">→ {a.title}</Link>
+          ))}
+        </section>
+      )}
     </div>
   )
 }
