@@ -40,7 +40,7 @@ export default async function ToolPage({ params }: Props) {
 
       <div className="mt-6 flex flex-wrap items-center gap-4">
         <a
-          href={tool.affiliateUrl}
+          href={`/go/${tool.slug}`}
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-emerald-700"
@@ -49,6 +49,7 @@ export default async function ToolPage({ params }: Props) {
         </a>
         <span className="text-sm text-zinc-500">{tool.pricing}</span>
       </div>
+      <p className="mt-2 text-[11px] text-zinc-400">Enlace afiliado — si contratás, podemos ganar comisión sin costo extra para vos.</p>
 
       <div className="mt-6 flex flex-wrap gap-2">
         {tool.tags.map(tag => (
